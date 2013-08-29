@@ -1,0 +1,27 @@
+{
+  "name": "authentication",
+  "version": "0.0.1",
+  "author": "jsteemann, moonbeamlabs",
+  "description": "authentication example",
+
+  "setup": "scripts/setup.js",
+  "teardown": "scripts/teardown.js",
+
+  "apps": {
+    "/": "authentication.js"
+  },
+
+  "assets": {
+    "index.html": {
+      "files": [
+        "frontend/index.html"
+      ]
+    },
+
+    "app.js": {
+      "files": [
+        "frontend/app.js"
+      ]
+    }
+  }
+}
