@@ -1,8 +1,8 @@
 {
   "name": "authentication",
-  "version": "0.0.1",
-  "author": "jsteemann, moonbeamlabs",
-  "description": "authentication example",
+  "version": "0.0.2",
+  "author": "Jan Steemann, Lucas Dohmen",
+  "description": "A simple example for authentication with Foxx",
 
   "setup": "scripts/setup.js",
   "teardown": "scripts/teardown.js",
