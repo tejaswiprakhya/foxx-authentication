@@ -35,7 +35,9 @@
     app = new Foxx.Application(applicationContext),
     NoAdmin = function() {},
     userIsAdmin = function (req) {
-      return (req.user && req.user.isAdmin);
+      if (!(req.user && req.user.isAdmin)) {
+        throw new NoAdmin();
+      }
     };
 
   NoAdmin.prototype = new Error();
@@ -92,5 +94,5 @@
     res.json({
       "session": req.currentSession.data,
     });
-  }).onlyIf(userIsAdmin, NoAdmin).errorResponse(NoAdmin, 401, "User has to be admin");
+  }).onlyIf(userIsAdmin).errorResponse(NoAdmin, 401, "User has to be admin");
 }());
