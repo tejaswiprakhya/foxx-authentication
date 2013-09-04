@@ -15,12 +15,27 @@
     <section>
       <form name="login" action="login" method="post" accept-charset="utf-8">
         <ul>
+          <li><legend>Login</legend></li>
           <li><label for="username">Username</label>
-          <input type="text" name="username" placeholder="Your Name Here" required></li>
+          <input type="text" name="username" placeholder="Your Username Here" required></li>
           <li><label for="password">Password</label>
           <input type="password" name="password" placeholder="Your Password Here" required></li>
           <li>
           <input type="submit" value="Login"></li>
+        </ul>
+      </form>
+
+      <form name="register" action="register" method="post" accept-charset="utf-8">
+        <ul>
+          <li><legend>Register</legend></li>
+          <li><label for="name">Name</label>
+          <input type="text" name="name" placeholder="Your Name Here"></li>
+          <li><label for="username">Username</label>
+          <input type="text" name="username" placeholder="Your Username Here" required></li>
+          <li><label for="password">Password</label>
+          <input type="password" name="password" placeholder="Your Password Here" required></li>
+          <li>
+          <input type="submit" value="Register"></li>
         </ul>
       </form>
 

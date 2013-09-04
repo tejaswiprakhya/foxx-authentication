@@ -8,7 +8,10 @@
   users.setup({ journalSize: 1 * 1024 * 1024 });
 
   // set up a default admin user
-  users.add("admin", "secret");
+  users.add("admin", "secret", true, {
+    name: "Root",
+    admin: true
+  });
 
   // set up sessions
   var s = new f.Sessions(applicationContext);

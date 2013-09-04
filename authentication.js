@@ -35,7 +35,7 @@
     controller = new Foxx.Controller(applicationContext),
     NoAdmin = function() {},
     userIsAdmin = function (req) {
-      if (!(req.user && req.user.isAdmin)) {
+      if (!(req.user && req.user.data.admin)) {
         throw new NoAdmin();
       }
     };
@@ -70,7 +70,18 @@
    */
   controller.logout("/logout");
 
-  // TODO: Allow users to register
+  /** Allow users to register
+   *
+   * Standard Register with an additional user attributes
+   * and an admin attribute set to false.
+   */
+  controller.register("/register", {
+    acceptedAttributes: ["name"],
+
+    defaultAttributes: {
+      admin: false
+    }
+  });
 
   /** Increase counter by one for this session
    *
