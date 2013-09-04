@@ -7,7 +7,7 @@
   "setup": "scripts/setup.js",
   "teardown": "scripts/teardown.js",
 
-  "apps": {
+  "controllers": {
     "/": "authentication.js"
   },
 
