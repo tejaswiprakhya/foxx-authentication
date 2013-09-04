@@ -32,7 +32,7 @@
   "use strict";
 
   var Foxx = require("org/arangodb/foxx"),
-    app = new Foxx.Application(applicationContext),
+    controller = new Foxx.Controller(applicationContext),
     NoAdmin = function() {},
     userIsAdmin = function (req) {
       if (!(req.user && req.user.isAdmin)) {
@@ -42,7 +42,7 @@
 
   NoAdmin.prototype = new Error();
 
-  app.activateAuthentication({
+  controller.activateAuthentication({
     type: "cookie",
     cookieName: "myCookie",
     cookieLifetime: 360000,
@@ -53,7 +53,7 @@
    *
    * Standard Login with adjusted onSuccess handler
    */
-  app.login("/login", {
+  controller.login("/login", {
     onSuccess: function (req, res) {
       req.currentSession.set("fancy", "pants");
       res.json({
@@ -68,7 +68,7 @@
    *
    * Standard Logout, no adjustments
    */
-  app.logout("/logout");
+  controller.logout("/logout");
 
   // TODO: Allow users to register
 
@@ -77,7 +77,7 @@
    * Demonstration of the Session Functionality for Foxx,
    * simple case of authentication: Every logged in user can use it
    */
-  app.get('/counter', function (req, res) {
+  controller.get('/counter', function (req, res) {
     req.currentSession.set("counter", 1 + (req.currentSession.get("counter") || 0));
 
     res.json({
@@ -90,7 +90,7 @@
    * Just to show you all data in this session,
    * also demonstrates how to restrict a route to admins only
    */
-  app.get('/dump', function (req, res) {
+  controller.get('/dump', function (req, res) {
     res.json({
       "session": req.currentSession.data,
     });
