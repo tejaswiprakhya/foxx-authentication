@@ -1,8 +1,6 @@
 (function() {
   "use strict";
 
-  require("console").log("%s", "setting up app " + applicationContext.name);
-
   var f = require("org/arangodb/foxx/authentication");
 
   // set up users
