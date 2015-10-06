@@ -4,8 +4,10 @@
   "author": "Jan Steemann, Lucas Dohmen",
   "description": "A simple example for authentication with Foxx",
 
-  "setup": "scripts/setup.js",
-  "teardown": "scripts/teardown.js",
+  "scripts": {
+    "setup" : "scripts/setup.js",
+    "teardown": "scripts/teardown.js"
+  },
 
   "controllers": {
     "/": "authentication.js"
