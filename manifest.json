@@ -13,17 +13,14 @@
     "/": "authentication.js"
   },
 
-  "assets": {
-    "index.html": {
-      "files": [
-        "frontend/index.html"
-      ]
+  "files": {
+    "/index.html": {
+      "path": "frontend/index.html",
+      "gzip": false
     },
-
-    "app.js": {
-      "files": [
-        "frontend/app.js"
-      ]
+    "/app.js": {
+      "path": "frontend/app.js",
+      "gzip": false
     }
   }
 }
